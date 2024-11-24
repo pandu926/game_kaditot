@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://cmapfvpr22af7"]
+[gd_scene load_steps=29 format=3 uid="uid://cmapfvpr22af7"]
 
+[ext_resource type="Script" path="res://script/player.gd" id="1_hkqxa"]
 [ext_resource type="Texture2D" uid="uid://co05868ewotn7" path="res://assets/kadita (1).png" id="1_xppjw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vc881"]
@@ -188,16 +189,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_26urg"]
-radius = 15.8114
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8eotx"]
+radius = 25.0
+height = 50.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_hkqxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(0.773438, 0.793269)
 sprite_frames = SubResource("SpriteFrames_mhogg")
 animation = &"walk"
-frame_progress = 0.183309
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 25)
-shape = SubResource("CircleShape2D_26urg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(2, 12)
+shape = SubResource("CapsuleShape2D_8eotx")

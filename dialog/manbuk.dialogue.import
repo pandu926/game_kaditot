@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d0dy314s3p3rn"
+path="res://.godot/imported/manbuk.dialogue-8ddd5198fcbab8693d94de9f8aacdd85.tres"
+
+[deps]
+
+source_file="res://dialog/manbuk.dialogue"
+dest_files=["res://.godot/imported/manbuk.dialogue-8ddd5198fcbab8693d94de9f8aacdd85.tres"]
+
+[params]
+
+defaults=true
