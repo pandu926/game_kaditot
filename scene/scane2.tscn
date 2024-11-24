@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6x002dkk8hr"]
+
+[ext_resource type="PackedScene" uid="uid://c0naf44hods2h" path="res://scene/game.tscn" id="1_tf6es"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tex6t"]
+font_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="game" parent="." instance=ExtResource("1_tf6es")]
+position = Vector2(168, 101)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 357.0
+offset_right = 429.0
+offset_bottom = 380.0
+text = "Scene 2"
+label_settings = SubResource("LabelSettings_tex6t")

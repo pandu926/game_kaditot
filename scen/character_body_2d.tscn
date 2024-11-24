@@ -1,0 +1,144 @@
+[gd_scene load_steps=21 format=3 uid="uid://dmgksemg8wl0s"]
+
+[ext_resource type="Script" path="res://manuk.gd" id="1_bd0ri"]
+[ext_resource type="Texture2D" uid="uid://c4conmx6l8fv7" path="res://kadita.png" id="1_fkipw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7w4c"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(0, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hx88"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(128, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pql72"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(256, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4cao"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(384, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoa23"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(512, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qma1"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(640, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1648"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(768, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18hs8"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(896, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8brri"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(0, 208, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8fj1"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(128, 208, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uujka"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(256, 208, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ksv1"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(384, 208, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2mn6"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(512, 208, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av5pw"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(640, 208, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbfgh"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(768, 208, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnuve"]
+atlas = ExtResource("1_fkipw")
+region = Rect2(896, 208, 128, 208)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovjie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7w4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hx88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pql72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4cao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoa23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qma1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1648")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18hs8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8brri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8fj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uujka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ksv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2mn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av5pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbfgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnuve")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mxpy"]
+size = Vector2(50, 121)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_bd0ri")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ovjie")
+animation = &"walk"
+frame_progress = 0.295356
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 11.5)
+shape = SubResource("RectangleShape2D_0mxpy")

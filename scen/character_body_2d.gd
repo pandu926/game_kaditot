@@ -1,0 +1,1 @@
+tends CharacterBody2D

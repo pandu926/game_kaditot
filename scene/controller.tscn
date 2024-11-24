@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://by66j3to1ckbf"]
+
+[ext_resource type="Script" path="res://script/controller.gd" id="1_ff8d0"]
+[ext_resource type="Texture2D" uid="uid://bd61fyfjlxt5x" path="res://scen/RIGHT.png" id="2_yysff"]
+[ext_resource type="Texture2D" uid="uid://t2nxcott3fs5" path="res://scen/LEFT.png" id="3_ayx5n"]
+[ext_resource type="Texture2D" uid="uid://b0x4ceenf8ji1" path="res://scen/UP.png" id="4_l3r3e"]
+
+[node name="controller" type="CanvasLayer"]
+script = ExtResource("1_ff8d0")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="RIGHT" type="TouchScreenButton" parent="Node"]
+position = Vector2(289, 746)
+scale = Vector2(0.633333, 0.414286)
+texture_normal = ExtResource("2_yysff")
+action = "ui_right"
+
+[node name="LEFT" type="TouchScreenButton" parent="Node"]
+position = Vector2(142, 747)
+scale = Vector2(0.307143, 0.214286)
+texture_normal = ExtResource("3_ayx5n")
+action = "ui_left"
+
+[node name="UP" type="TouchScreenButton" parent="Node"]
+position = Vector2(1468, 745)
+scale = Vector2(0.638095, 0.452076)
+texture_normal = ExtResource("4_l3r3e")
+action = "ui_accept"
+
+[node name="Button" type="Button" parent="Node"]
+offset_left = 67.0
+offset_top = 45.0
+offset_right = 138.0
+offset_bottom = 76.0
+text = "Kembali"
+
+[connection signal="pressed" from="Node/RIGHT" to="." method="_on_right_pressed"]
+[connection signal="released" from="Node/RIGHT" to="." method="_on_right_released"]
+[connection signal="pressed" from="Node/LEFT" to="." method="_on_left_pressed"]
+[connection signal="released" from="Node/LEFT" to="." method="_on_left_released"]
+[connection signal="pressed" from="Node/UP" to="." method="_on_up_pressed"]
+[connection signal="released" from="Node/UP" to="." method="_on_up_released"]
+[connection signal="pressed" from="Node/Button" to="." method="_on_button_pressed"]

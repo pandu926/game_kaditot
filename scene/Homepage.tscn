@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpo2igghjfs30"]
+
+[ext_resource type="Script" path="res://script/homepage.gd" id="1_7ipgp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jeve"]
+font_size = 30
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7ipgp")
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -232.0
+offset_right = 223.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+
+[node name="Label" type="Label" parent="continue"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 39.0
+offset_right = 309.0
+offset_bottom = 81.0
+text = "Continue"
+label_settings = SubResource("LabelSettings_8jeve")
+
+[node name="setting" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = 61.0
+offset_right = 226.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+
+[node name="Label" type="Label" parent="setting"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 36.0
+offset_right = 323.0
+offset_bottom = 78.0
+text = "Setting"
+label_settings = SubResource("LabelSettings_8jeve")
+
+[node name="newGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -83.0
+offset_right = 165.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+
+[node name="Label" type="Label" parent="newGame"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 30.0
+offset_right = 243.0
+offset_bottom = 72.0
+text = "New Game"
+label_settings = SubResource("LabelSettings_8jeve")
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 1
+offset_left = -191.0
+offset_top = 228.0
+offset_right = 190.0
+offset_bottom = 338.0
+text = "
+"
+
+[node name="Label" type="Label" parent="exit"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 32.0
+offset_right = 323.0
+offset_bottom = 74.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_8jeve")
+
+[connection signal="pressed" from="continue" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="setting" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="newGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

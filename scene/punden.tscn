@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://tsca0qscu8wo"]
+
+[ext_resource type="Script" path="res://script/punden.gd" id="1_u3lei"]
+[ext_resource type="Texture2D" uid="uid://ddi5oe1y7t1ml" path="res://assets/punden.png" id="2_kc26v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72tbi"]
+size = Vector2(55, 188)
+
+[node name="punden" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_u3lei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.5, 84)
+shape = SubResource("RectangleShape2D_72tbi")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-3.5, -65)
+scale = Vector2(0.295875, 0.314125)
+texture = ExtResource("2_kc26v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

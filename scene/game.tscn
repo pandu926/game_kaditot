@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0naf44hods2h"]
+
+[ext_resource type="PackedScene" uid="uid://7hafn1ukjndc" path="res://scen/stage 1.tscn" id="2_2bffv"]
+[ext_resource type="Texture2D" uid="uid://cihck54on5rgu" path="res://assets/bg desa.png" id="2_ks8er"]
+
+[node name="game" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = 1
+position = Vector2(1669, 656)
+scale = Vector2(3.50391, 3.26587)
+texture = ExtResource("2_ks8er")
+
+[node name="Node2D" parent="." instance=ExtResource("2_2bffv")]
+position = Vector2(6271, 1093)
