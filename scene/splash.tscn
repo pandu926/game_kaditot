@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt8xuoopr3tgr"]
+
+[ext_resource type="Script" path="res://script/splash.gd" id="1_jilhi"]
+[ext_resource type="Texture2D" uid="uid://f0st3q1iiywq" path="res://assets/logo/output-onlinepngtools.png" id="2_jk6sd"]
+
+[node name="splash" type="Control"]
+layout_mode = 3
+anchor_left = 0.544
+anchor_top = 0.522
+anchor_right = 0.544
+anchor_bottom = 0.522
+offset_left = -1305.6
+offset_top = -563.76
+offset_right = -1305.6
+offset_bottom = -563.76
+grow_vertical = 0
+size_flags_horizontal = 4
+script = ExtResource("1_jilhi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -430.0
+offset_top = -159.0
+offset_right = 3051.0
+offset_bottom = 1248.0
+color = Color(0, 0, 0, 1)
+
+[node name="logo" type="Sprite2D" parent="."]
+position = Vector2(1236, 531)
+texture = ExtResource("2_jk6sd")

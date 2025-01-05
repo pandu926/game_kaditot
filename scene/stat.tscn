@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://1mwubi42tatf"]
+
+[ext_resource type="Script" path="res://script/stat.gd" id="1_kltia"]
+[ext_resource type="Texture2D" uid="uid://dvi4r8er33a0q" path="res://assets/utils/coin.png" id="3_3st2m"]
+[ext_resource type="Texture2D" uid="uid://bunpiau8asv6n" path="res://assets/gui/menu_6619331.png" id="3_lpx30"]
+
+[sub_resource type="FontVariation" id="FontVariation_ygqfj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f6m4m"]
+font = SubResource("FontVariation_ygqfj")
+font_size = 57
+font_color = Color(0.951778, 0.610161, 0.0307837, 1)
+
+[node name="stat" type="CanvasLayer"]
+script = ExtResource("1_kltia")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.935
+anchor_top = 0.072
+anchor_right = 0.935
+anchor_bottom = 0.072
+offset_left = -2237.0
+offset_top = -58.76
+offset_right = 143.0
+offset_bottom = 1008.24
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(2293, 65)
+scale = Vector2(1.01779, 1)
+texture = ExtResource("3_3st2m")
+region_enabled = true
+region_rect = Rect2(0, 0, 89, 86)
+
+[node name="jmlCoin" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 55.15
+anchor_top = 2.0
+anchor_right = 55.15
+anchor_bottom = 2.0
+offset_left = -129089.0
+offset_top = -2105.0
+offset_right = -128991.0
+offset_bottom = -2027.0
+size_flags_horizontal = 8
+text = "0"
+label_settings = SubResource("LabelSettings_f6m4m")
+
+[node name="Button" type="TouchScreenButton" parent="Control"]
+scale = Vector2(0.207031, 0.222656)
+texture_normal = ExtResource("3_lpx30")
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

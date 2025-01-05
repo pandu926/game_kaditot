@@ -8,7 +8,7 @@ func _ready() -> void:
 	firebox.play("default")  # Pastikan animasi firebox dimulai
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var current_frame = firebox.frame  # Ambil frame saat ini dari firebox
 	
 	# Menampilkan fire hanya pada frame 7-10 dari firebox (indeks 6 hingga 9)
@@ -22,4 +22,4 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()
+	body.dead()

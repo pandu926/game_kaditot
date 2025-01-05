@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjfou71etmcmq"]
+[gd_scene load_steps=25 format=3 uid="uid://bjfou71etmcmq"]
 
 [ext_resource type="Script" path="res://script/firetrap.gd" id="1_e1aqk"]
 [ext_resource type="Texture2D" uid="uid://dhf3hi3y5hvns" path="res://assets/trap/FireBox.png" id="2_elc46"]
@@ -143,6 +143,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayri7"]
+size = Vector2(77, 98)
+
 [node name="firetrap" type="AnimatableBody2D"]
 script = ExtResource("1_e1aqk")
 
@@ -165,5 +168,9 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_lcxlo")
 animation = &"fire"
 frame_progress = 0.455897
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 49)
+shape = SubResource("RectangleShape2D_ayri7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1t87apktr6yr"]
+
+[ext_resource type="Script" path="res://script/tentang.gd" id="1_0qbbl"]
+[ext_resource type="FontFile" uid="uid://b7ism6heonjh5" path="res://assets/font/04B_30__.TTF" id="1_8cqvq"]
+[ext_resource type="PackedScene" uid="uid://butuwih8ewo05" path="res://scene/back.tscn" id="3_8hopl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtbmf"]
+font = ExtResource("1_8cqvq")
+font_size = 28
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_0qbbl")
+
+[node name="Control6" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 886.0
+offset_top = 25.0
+offset_right = 926.0
+offset_bottom = 65.0
+
+[node name="Control5" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 25.0
+offset_right = 481.0
+offset_bottom = 65.0
+
+[node name="Control4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 34.0
+offset_top = 23.0
+offset_right = 74.0
+offset_bottom = 63.0
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 229.0
+offset_top = 55.0
+offset_right = 2071.0
+offset_bottom = 257.0
+grow_horizontal = 2
+text = " Queen of the Southern Seas tentang perjalanan Kadita, seorang putri yang
+dikutuk menjadi makhluk mistis karena melanggar aturan sebuah desa pesisir dengan
+memasuki sebuah punden terlarang. punden tersebut sangat dihormati oleh warga
+sekitar. Dalam perjalanan spiritualnya, makhluk utusan yang mengutuk kadita
+memberikan petunjuk untuk menemukan tongkat di dasar lautan yang paling dalam dan
+gelap sebagai syarat dia bisa kembali seperti semula. "
+label_settings = SubResource("LabelSettings_dtbmf")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -356.0
+offset_top = 20.0
+offset_right = -316.0
+offset_bottom = 60.0
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_8hopl")]

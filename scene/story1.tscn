@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7bkpero7bcgu"]
+
+[ext_resource type="FontFile" uid="uid://b7ism6heonjh5" path="res://assets/font/04B_30__.TTF" id="1_5dmaj"]
+[ext_resource type="Script" path="res://rich_text_label.gd" id="2_tb8tp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.019
+anchor_bottom = -0.019
+offset_left = 310.0
+offset_top = 317.52
+offset_right = 2125.0
+offset_bottom = 763.52
+theme_override_fonts/normal_font = ExtResource("1_5dmaj")
+theme_override_font_sizes/bold_italics_font_size = 7
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+script = ExtResource("2_tb8tp")
+
+[node name="Timer" type="Timer" parent="RichTextLabel"]
+
+[connection signal="timeout" from="RichTextLabel/Timer" to="RichTextLabel" method="_on_timer_timeout"]

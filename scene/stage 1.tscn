@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://7hafn1ukjndc"]
 
-[ext_resource type="Texture2D" uid="uid://bp71eynxb0034" path="res://assets/tanah (4).png" id="1_51eqk"]
+[ext_resource type="Texture2D" uid="uid://bp71eynxb0034" path="res://scen/tanah (4).png" id="1_51eqk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1i0p0"]
 

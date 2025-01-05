@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://2q0woy8clb1c"]
+
+[ext_resource type="Script" path="res://script/continue.gd" id="1_50d7h"]
+[ext_resource type="Texture2D" uid="uid://cnq4r56csd46x" path="res://assets/gui/back_608092.png" id="2_ovtks"]
+[ext_resource type="FontFile" uid="uid://b7ism6heonjh5" path="res://assets/font/04B_30__.TTF" id="3_x284p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5fin1"]
+font = ExtResource("3_x284p")
+font_size = 30
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_50d7h")
+
+[node name="stage1" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.276
+anchor_right = 0.455
+anchor_bottom = 0.276
+offset_left = -262.0
+offset_top = -36.08
+offset_right = 264.0
+offset_bottom = 35.92
+text = "Stage 1"
+
+[node name="stage2" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.456
+anchor_top = 0.354
+anchor_right = 0.456
+anchor_bottom = 0.354
+offset_left = -263.4
+offset_top = -29.32
+offset_right = 262.6
+offset_bottom = 28.68
+text = "Stage 2"
+
+[node name="stage3" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.456
+anchor_top = 0.425
+anchor_right = 0.456
+anchor_bottom = 0.425
+offset_left = -264.4
+offset_top = -33.0
+offset_right = 263.6
+offset_bottom = 32.0
+text = "Stage 3
+"
+
+[node name="stage4" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.456
+anchor_top = 0.501
+anchor_right = 0.456
+anchor_bottom = 0.501
+offset_left = -264.4
+offset_top = -33.0801
+offset_right = 263.6
+offset_bottom = 33.9199
+text = "Stage 4"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(28, 31)
+scale = Vector2(0.144531, 0.126953)
+texture_normal = ExtResource("2_ovtks")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.453
+anchor_top = 0.317
+anchor_right = 0.453
+anchor_bottom = 0.317
+offset_left = -182.2
+offset_top = -15.36
+offset_right = -142.2
+offset_bottom = 7.63998
+text = "Tidak ada data "
+label_settings = SubResource("LabelSettings_5fin1")
+
+[connection signal="pressed" from="stage1" to="." method="_on_stage_1_pressed"]
+[connection signal="pressed" from="stage2" to="." method="_on_stage_2_pressed"]
+[connection signal="pressed" from="stage3" to="." method="_on_stage_3_pressed"]
+[connection signal="pressed" from="stage4" to="." method="_on_stage_4_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

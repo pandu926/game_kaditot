@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bd16cng4uop0p"]
+
+[ext_resource type="PackedScene" uid="uid://cmapfvpr22af7" path="res://scene/player.tscn" id="1_k6o3t"]
+[ext_resource type="AudioStream" uid="uid://c1cnepirqn4ju" path="res://assets/sound/back.mp3" id="2_d0gfn"]
+[ext_resource type="PackedScene" uid="uid://by66j3to1ckbf" path="res://scene/controller.tscn" id="3_yp383"]
+[ext_resource type="Script" path="res://script/chunk_manager.gd" id="4_304yb"]
+
+[sub_resource type="Animation" id="Animation_lo0jo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_d5apl"]
+resource_name = "cutscene"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(90866, 174), Vector2(91233, 177)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vpiub"]
+_data = {
+"RESET": SubResource("Animation_lo0jo"),
+"cutscene": SubResource("Animation_d5apl")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_k6o3t")]
+position = Vector2(-6177, -134)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(0, -40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+libraries = {
+"": SubResource("AnimationLibrary_vpiub")
+}
+
+[node name="backsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d0gfn")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="controller" parent="." instance=ExtResource("3_yp383")]
+
+[node name="chunk" type="Node2D" parent="."]
+
+[node name="chunkManager" type="Node2D" parent="chunk"]
+script = ExtResource("4_304yb")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://h6t2qdut4a5w"
+path="res://.godot/imported/dialogueRaja.dialogue-430ac73dc969fb9926f04a710435ec33.tres"
+
+[deps]
+
+source_file="res://dialog/dialogueRaja.dialogue"
+dest_files=["res://.godot/imported/dialogueRaja.dialogue-430ac73dc969fb9926f04a710435ec33.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjfaef0ye670u"]
+
+[ext_resource type="Script" path="res://script/panel.gd" id="1_vgmsa"]
+[ext_resource type="Texture2D" uid="uid://djrsjh5h5c5fo" path="res://assets/gui/kotakan.png" id="2_ymgim"]
+[ext_resource type="Texture2D" uid="uid://c10gxo7fyvtju" path="res://assets/gui/exit (1).png" id="3_l2n0j"]
+[ext_resource type="Texture2D" uid="uid://nhk4pnam47yk" path="res://assets/gui/options.png" id="4_bb2re"]
+[ext_resource type="Texture2D" uid="uid://bdm0kqqf378kh" path="res://assets/gui/start.png" id="5_vsa0m"]
+
+[node name="panel" type="CanvasLayer"]
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
+script = ExtResource("1_vgmsa")
+
+[node name="Control4" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.838
+anchor_bottom = 0.86
+offset_left = 56.0
+offset_top = -126.0
+offset_right = 28.7998
+offset_bottom = -93.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.026
+anchor_top = 0.138
+anchor_right = 0.985
+anchor_bottom = 1.071
+offset_left = 0.583996
+offset_top = 0.048645
+offset_right = 4.76013
+offset_bottom = 6.43555
+color = Color(0.0015231, 0.000474961, 1.41008e-10, 1)
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.841
+anchor_bottom = 0.837
+offset_left = 80.8333
+offset_top = 1.66667
+offset_right = 64.4332
+offset_bottom = 2.70667
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="alert" type="Sprite2D" parent="Control3"]
+position = Vector2(1018.67, 456.333)
+scale = Vector2(1.46762, 1.64162)
+texture = ExtResource("2_ymgim")
+
+[node name="Button" type="Button" parent="Control3"]
+layout_mode = 0
+offset_left = 914.5
+offset_top = 547.167
+offset_right = 1122.5
+offset_bottom = 649.167
+icon = ExtResource("3_l2n0j")
+flat = true
+
+[node name="Button2" type="Button" parent="Control3"]
+layout_mode = 0
+offset_left = 912.833
+offset_top = 433.0
+offset_right = 1120.83
+offset_bottom = 553.0
+icon = ExtResource("4_bb2re")
+flat = true
+
+[node name="Button3" type="Button" parent="Control3"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 311.0
+offset_right = 1114.0
+offset_bottom = 446.0
+icon = ExtResource("5_vsa0m")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Control3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control3/Button3" to="." method="_on_button_3_pressed"]

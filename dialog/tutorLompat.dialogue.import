@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://0ak1jkxtj8em"
+path="res://.godot/imported/tutorLompat.dialogue-a94b5a98f9ba2ff4aba3ada46dc9d773.tres"
+
+[deps]
+
+source_file="res://dialog/tutorLompat.dialogue"
+dest_files=["res://.godot/imported/tutorLompat.dialogue-a94b5a98f9ba2ff4aba3ada46dc9d773.tres"]
+
+[params]
+
+defaults=true

@@ -28,9 +28,9 @@ func _enter_tree():
 
 
 func _on_new_game_pressed() -> void:
-	var next_scene = load("res://scen/stage 1.tscn")  # Pastikan path benar
+	var next_scene = load("res://scene/story1.tscn")  # Pastikan path benar
 	if next_scene:  # Cek apakah scene berhasil dimuat
-		get_tree().change_scene_to_file("res://scen/stage 1.tscn")  # Ganti scene dengan aman
+		get_tree().change_scene_to_file("res://scene/story1.tscn")  # Ganti scene dengan aman
 	else:
 		print("Gagal memuat scene. Periksa path!")
 
@@ -39,3 +39,35 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 	
+
+
+func _on_about_pressed() -> void:
+	var next_scene = load("res://scene/tentang.tscn")  # Pastikan path benar
+	if next_scene:  # Cek apakah scene berhasil dimuat
+		get_tree().change_scene_to_file("res://scene/tentang.tscn")  # Ganti scene dengan aman
+	else:
+		print("Gagal memuat scene. Periksa path!")
+
+
+func _on_exit_3_pressed() -> void:
+	var next_scene = load("res://stage4.tscn")  # Pastikan path benar
+	if next_scene:  # Cek apakah scene berhasil dimuat
+		get_tree().change_scene_to_file("res://stage4.tscn")  # Ganti scene dengan aman
+	else:
+		print("Gagal memuat scene. Periksa path!")
+
+
+func _on_exit_2_pressed() -> void:
+	var next_scene = load("res://stage3.tscn")  # Pastikan path benar
+	if next_scene:  # Cek apakah scene berhasil dimuat
+		get_tree().change_scene_to_file("res://stage3.tscn")  # Ganti scene dengan aman
+	else:
+		print("Gagal memuat scene. Periksa path!")
+
+
+func _on_continue_pressed() -> void:
+	var next_scene = load("res://scene/continue.tscn")  # Pastikan path benar
+	if next_scene:  # Cek apakah scene berhasil dimuat
+		get_tree().change_scene_to_file("res://scene/continue.tscn")  # Ganti scene dengan aman
+	else:
+		print("Gagal memuat scene. Periksa path!")

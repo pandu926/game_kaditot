@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dfrt7ko3i5s20"
+path="res://.godot/imported/masukPunden.dialogue-ecb56df96b64ef031995141306b5c261.tres"
+
+[deps]
+
+source_file="res://dialog/masukPunden.dialogue"
+dest_files=["res://.godot/imported/masukPunden.dialogue-ecb56df96b64ef031995141306b5c261.tres"]
+
+[params]
+
+defaults=true

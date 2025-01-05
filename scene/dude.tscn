@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0l8wd4r8884h"]
+
+[ext_resource type="Texture2D" uid="uid://l0dncnjdfrb4" path="res://y/assets/enemy/dude/Dude_Monster_Throw_4.png" id="1_gerhf"]
+[ext_resource type="Script" path="res://script/dude.gd" id="3_c0iaf"]
+[ext_resource type="PackedScene" uid="uid://d17m22atiot52" path="res://scene/batuterbang.tscn" id="3_ouvnv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vsc2"]
+atlas = ExtResource("1_gerhf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrwhx"]
+atlas = ExtResource("1_gerhf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwtal"]
+atlas = ExtResource("1_gerhf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3hwp"]
+atlas = ExtResource("1_gerhf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udxnw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vsc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrwhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwtal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3hwp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h4dp"]
+size = Vector2(36, 31)
+
+[sub_resource type="Animation" id="Animation_wkypq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("batu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_uv6t7"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("batu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-24, 4), Vector2(-274, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fmma"]
+_data = {
+"RESET": SubResource("Animation_wkypq"),
+"move": SubResource("Animation_uv6t7")
+}
+
+[node name="dude" type="CharacterBody2D"]
+position = Vector2(817, 239)
+script = ExtResource("3_c0iaf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_udxnw")
+frame_progress = 0.0537909
+
+[node name="detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="area" type="CollisionShape2D" parent="detector"]
+position = Vector2(-292, -2)
+shape = SubResource("RectangleShape2D_0h4dp")
+
+[node name="colli" type="CollisionShape2D" parent="."]
+
+[node name="batu" parent="." instance=ExtResource("3_ouvnv")]
+position = Vector2(-24, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="batu"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_8fmma")
+}
+autoplay = "move"
+
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="detector" to="." method="_on_detector_body_exited"]

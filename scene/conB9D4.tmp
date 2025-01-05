@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://by66j3to1ckbf"]
+
+[ext_resource type="Script" path="res://script/controller.gd" id="1_ff8d0"]
+[ext_resource type="FontFile" uid="uid://b7ism6heonjh5" path="res://assets/font/04B_30__.TTF" id="2_xt6nx"]
+[ext_resource type="Texture2D" uid="uid://bd61fyfjlxt5x" path="res://scen/RIGHT.png" id="2_yysff"]
+[ext_resource type="Texture2D" uid="uid://t2nxcott3fs5" path="res://scen/LEFT.png" id="3_ayx5n"]
+[ext_resource type="Texture2D" uid="uid://b0x4ceenf8ji1" path="res://scen/UP.png" id="4_l3r3e"]
+[ext_resource type="Texture2D" uid="uid://dw5qylp2p564w" path="res://assets/gui/RectangleBox_96x96.png" id="6_wq0uj"]
+
+[node name="controller" type="CanvasLayer"]
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
+script = ExtResource("1_ff8d0")
+
+[node name="Node" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="UP" type="TouchScreenButton" parent="Node"]
+scale = Vector2(0.638095, 0.452076)
+texture_normal = ExtResource("4_l3r3e")
+action = "ui_accept"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RIGHT" type="TouchScreenButton" parent="Control"]
+scale = Vector2(0.633333, 0.414286)
+texture_normal = ExtResource("2_yysff")
+action = "ui_right"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LEFT" type="TouchScreenButton" parent="Control2"]
+scale = Vector2(0.307143, 0.214286)
+texture_normal = ExtResource("3_ayx5n")
+action = "ui_left"
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="alert" type="Sprite2D" parent="Control3"]
+position = Vector2(1045.83, 343.333)
+scale = Vector2(7, 3.611)
+texture = ExtResource("6_wq0uj")
+
+[node name="kembali" type="TouchScreenButton" parent="Control3/alert"]
+z_index = 120
+position = Vector2(-18.5448, -3.73543)
+scale = Vector2(0.289012, 0.560312)
+
+[node name="Label" type="Label" parent="Control3/alert/kembali"]
+offset_right = 159.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_xt6nx")
+text = "you are daed"
+
+[connection signal="pressed" from="Node/UP" to="." method="_on_up_pressed"]
+[connection signal="released" from="Node/UP" to="." method="_on_up_released"]
+[connection signal="pressed" from="Control/RIGHT" to="." method="_on_right_pressed"]
+[connection signal="released" from="Control/RIGHT" to="." method="_on_right_released"]
+[connection signal="pressed" from="Control2/LEFT" to="." method="_on_left_pressed"]
+[connection signal="released" from="Control2/LEFT" to="." method="_on_left_released"]
+[connection signal="pressed" from="Control3/alert/kembali" to="." method="_on_kembali_pressed"]
